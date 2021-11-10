@@ -3,15 +3,11 @@ package com.example.elsospring.domain;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
 public class Blogger {
 
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Id
     private Long id;
     private String name;
     private int age;
-    @OneToMany(mappedBy = "blogger")
     private List<Story> stories;
 
     public Blogger() {
@@ -19,6 +15,12 @@ public class Blogger {
     }
 
     public Blogger(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public Blogger(Long id, String name, int age) {
+        this.id = id;
         this.name = name;
         this.age = age;
     }

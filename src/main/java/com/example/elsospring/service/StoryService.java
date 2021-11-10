@@ -30,20 +30,6 @@ public class StoryService {
         return storyRepo.findAll();
     }
 
-    public Story getStory() {
-        return storyRepo.findFirstByOrderByPostedDesc();
-    }
-
-    //Ezt vegul nem hasznaljuk - hasonlo volt a szerepe mint a data.sql amikor @PostConstruct annotacio volt elotte
-    public void init() {
-        Blogger blogger = new Blogger("BelsőGyula", 25);
-        bloggerRepo.save(blogger);
-
-        Story story = new Story("Belső cím", "Belső tartalom", new Date(), blogger);
-        storyRepo.save(story);
-
-    }
-
     public Story getSpecificStory(String title) {
         return storyRepo.findByTitle(title);
     }

@@ -3,17 +3,12 @@ package com.example.elsospring.domain;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "stories")
 public class Story {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String title;
-    @Column(columnDefinition = "TEXT")
     private String content;
     private Date posted;
-    @ManyToOne
     private Blogger blogger;
 
     public Story() {
@@ -25,6 +20,14 @@ public class Story {
         this.content = content;
         this.posted = posted;
         this.blogger = blogger;
+    }
+
+    public Story(Long id, String title, String content, Date posted, Long bloggerId) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.posted = posted;
+        this.blogger = new Blogger(bloggerId, "Krisz", 21);
     }
 
     public Long getId() {
@@ -63,7 +66,7 @@ public class Story {
         return blogger;
     }
 
-    public void setAuthor(Blogger blogger) {
+    public void setBlogger(Blogger blogger) {
         this.blogger = blogger;
     }
 }
