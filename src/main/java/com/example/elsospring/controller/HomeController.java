@@ -33,7 +33,7 @@ public class HomeController {
         return "stories";
     }
 
-    @RequestMapping("/story")
+    /*@RequestMapping("/story")
     public String story(Model model) {
         model.addAttribute("pageTitle", "LEGUJABB");
         model.addAttribute("story", storyService.getStory());
@@ -48,7 +48,7 @@ public class HomeController {
         }
         model.addAttribute("story", storyService.getSpecificStory(title));
         return "story";
-    }
+    }*/
 
     @ExceptionHandler(Exception.class)
     public String exceptionHandler(HttpServletRequest request, Exception ex, Model model) {

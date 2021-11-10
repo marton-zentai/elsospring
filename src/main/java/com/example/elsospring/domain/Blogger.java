@@ -1,5 +1,7 @@
 package com.example.elsospring.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,6 +13,8 @@ public class Blogger {
     private Long id;
     private String name;
     private int age;
+
+    @JsonBackReference
     @OneToMany(mappedBy = "blogger")
     private List<Story> stories;
 

@@ -3,7 +3,7 @@ package com.example.elsospring.domain;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "stories")
+@Entity
 public class Story {
 
     @Id
