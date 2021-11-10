@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ExceptionGeneral {
 
-    //minden kontrollerben egyszerre kezeli a kiveteleket
     @ExceptionHandler
-    public String exceptionHandler(Exception ex, Model model) {
-        model.addAttribute("exception", ex);
+    public String exception(Exception ex, Model model){
+        model.addAttribute("exception",ex);
         return "whateverHandlesTheException";
     }
 

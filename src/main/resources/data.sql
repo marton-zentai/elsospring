@@ -1,8 +1,3 @@
-INSERT INTO BLOGGER (name, age) VALUES ('Gyula', 21);
-INSERT INTO BLOGGER (name, age) VALUES ('Krisz', 30);
-
-INSERT INTO STORIES (content, title, posted, blogger_id) VALUES ('DOG_CONTENT', 'DOG', '2017-10-24', (SELECT id FROM BLOGGER WHERE name = 'Gyula'));
-INSERT INTO STORIES (content, title, posted, blogger_id) VALUES ('CAT_CONTENT', 'CAT', CURRENT_DATE(), (SELECT id FROM BLOGGER WHERE name = 'Gyula'));
-
-INSERT INTO STORIES (content, title, posted, blogger_id) VALUES ('RAT_CONTENT', 'RAT', '2017-10-25', (SELECT id FROM BLOGGER WHERE name = 'Krisz'));
-INSERT INTO STORIES (content, title, posted, blogger_id) VALUES ('FISH_CONTENT', 'FISH', CURRENT_DATE(), (SELECT id FROM BLOGGER WHERE name = 'Krisz'));
+INSERT INTO BLOGGER (id, name, age) VALUES (1, 'Gyula', 21);
+INSERT INTO BLOGGER (id, name, age) VALUES (2, 'Krisz', 30);
+INSERT INTO STORY (id, title, content, posted, blogger_id) VALUES (1, 'Teszt cim', 'Teszt tartalom', '2017-08-08', 1);
